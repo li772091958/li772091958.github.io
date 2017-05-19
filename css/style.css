@@ -353,7 +353,6 @@ body {
   -moz-background-size: cover;
   background-size: cover;
   z-index: -1;
-  opcity: 0.5;
 }
 #header-title {
   text-align: center;
@@ -366,7 +365,7 @@ body {
 #logo,
 #subtitle {
   text-decoration: none;
-  color: #888;
+  color: #fff;
   font-weight: 300;
   text-shadow: 0 1px 4px rgba(0,0,0,0.3);
 }
@@ -374,13 +373,11 @@ body {
   font-size: 40px;
   line-height: 40px;
   letter-spacing: 2px;
-  color: #888;
 }
 #subtitle {
   font-size: 16px;
   line-height: 16px;
   letter-spacing: 1px;
-  color: #aaa;
 }
 #subtitle-wrap {
   margin-top: 16px;
@@ -392,7 +389,7 @@ body {
 .nav-icon,
 .main-nav-link {
   float: left;
-  color: #579;
+  color: #fff;
   opacity: 0.6;
   text-decoration: none;
   text-shadow: 0 1px rgba(0,0,0,0.2);
