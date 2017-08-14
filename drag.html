@@ -1,0 +1,45 @@
+<!DOCTYPE HTML>
+<html>
+	<head>
+		<style type="text/css">
+			#div1, #div2 {width:800px; height:700px;padding:10px;border:1px solid #aaaaaa;float:left;margin-right:2px}
+			#drag2{color:red;}
+			#drag3{color:#e2a52e;}
+		</style>
+		<script type="text/javascript">
+			function allowDrop(ev){
+				ev.preventDefault();
+			}
+
+			function drag(ev){
+				ev.dataTransfer.dropEffect = "none";
+				ev.dataTransfer.setData("Text",ev.target.id);
+			}
+
+			function drop(ev){
+				ev.preventDefault();
+				console.log(ev)
+				var data=ev.dataTransfer.getData("Text");
+				console.log(data)
+				ev.target.appendChild(document.getElementById(data));
+			}
+		</script>
+	</head>
+	<body>
+
+		<p>请把 W3School 的图片拖放到矩形中：</p>
+
+		<div id="div1" ondrop="drop(event)" ondragover="allowDrop(event)">
+
+			<img id="drag1" src="eg_dragdrop_w3school.gif" draggable="true" ondragstart="drag(event)" />
+			
+			<h1 id="drag2" draggable="true" ondragstart="drag(event)">我是真的帅，超级帅的那种。</h1>	
+
+			<h1 id="drag3" draggable="true" ondragstart="drag(event)">呵呵呵</h1>					
+		
+		
+		</div>
+		<div id="div2" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
+
+	</body>
+</html>
