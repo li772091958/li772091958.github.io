@@ -1,0 +1,178 @@
+<div id="test" class="test">立即分享</div>
+<div class="share hide" id="shareComponent">
+	<div class="footer">
+		<div class="tip">
+			<div class="left"></div>
+			<div class="text">分享至</div>
+			<div class="right"></div>
+		</div>
+		<div class="share-wrapper">
+		    <div id="shareWx">
+		    	<img class="wx" src="https://static.namifunds.com/mktIMGs/wechat.svg" alt=""/>
+				<span>微信好友</span>
+		    </div>
+		    <div id="shareQQ">
+		    	<img class="qq" src="https://static.namifunds.com/mktIMGs/qq.svg" alt=""/>
+		    	<span>QQ好友</span>
+		    </div>
+		    <div id="shareTimeLine">
+		    	<img class="timeline" src="https://static.namifunds.com/mktIMGs/timeline.svg" alt=""/>
+		    	<span>朋友圈</span>
+		    </div>
+		</div>
+	</div>
+</div>
+<script>
+	var shareComponent = document.getElementById('shareComponent');
+	window.shareComponentShow = function(){
+		shareComponent.classList.remove('hide')
+		shareComponent.classList.add('show')
+	}
+	window.shareComponentHide = function(){
+		shareComponent.classList.remove('show')
+		shareComponent.classList.add('hide')
+	}
+	shareComponent.addEventListener('click', shareComponentHide)
+	document.getElementById('shareWx').addEventListener('click', function(e){
+		e.preventDefault()
+		console.log('分享至微信好友');
+		//TODO
+	}, true);
+	document.getElementById('shareQQ').addEventListener('click', function(e){
+		e.preventDefault()
+		console.log('分享至QQ');
+		//TODO		
+	});
+	document.getElementById('shareTimeLine').addEventListener('click', function(e){
+		e.preventDefault()
+		console.log('分享至朋友圈');
+		//TODO
+	});
+
+
+	document.getElementById('test').addEventListener('click', shareComponentShow);
+</script>
+
+<style>
+.test{
+    width: 10rem;
+    position: fixed;
+    top: 30%;
+    left: 30%;
+    height: 3rem;
+    font-size: 1.5rem;
+    background: rgb(255,212,0);
+    color: #666;
+    border-radius: 3rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.share{
+    height: 100%;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    left: 0;
+    z-index: 9999;
+    background: rgba(0,0,0,0.4);
+}
+.footer{
+	position: fixed;
+	bottom: 0;
+	width: 100%;
+	height: 8rem;
+	background: #fff;
+	z-index: 10000;
+	animation: entry .3s ease-in;
+}
+@keyframes entry
+{
+	from {bottom: -8rem;}
+	to {bottom: 0;}
+}
+.footer .tip{
+	width: 100%;
+	height: 2rem;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+.footer .tip .left{
+	width: 35%;
+	height: 1px;
+	background: linear-gradient(left, #ccc, #555);
+	background: -moz-linear-gradient(left, #ccc, #555);
+	background: -webkit-linear-gradient(left, #ccc, #555);
+	background: -o-linear-gradient(left, #ccc, #555);
+}
+.footer .tip .right{
+	width: 35%;
+	height: 1px;
+	background: linear-gradient(right, #ccc, #555);
+	background: -moz-linear-gradient(right, #ccc, #555);
+	background: -webkit-linear-gradient(right, #ccc, #555);
+	background: -o-linear-gradient(right, #ccc, #555);
+}
+.footer .tip .text{
+	margin: 0 .6rem;
+	color: #555;
+}
+.share-wrapper {
+	display: flex;
+	height: 6rem;
+	justify-content: space-around;
+	align-items: center;
+}
+.share-wrapper img {
+  height: 2.5rem;
+}
+.share-wrapper div{
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	flex-flow: column;
+	width: 5rem;
+}	
+.show{
+	display: -webkit-box;
+    display: box;
+}
+.hide{
+	display: none;
+}
+/*适配设置*/
+@media screen and (min-width: 320px) {
+    html, body { font-size: 12px; }
+}
+@media screen and (min-width: 360px) {
+    html, body { font-size: 13.5px; }
+}
+@media screen and (min-width: 375px) {
+    html, body { font-size: 14px; }
+}
+@media screen and (min-width: 414px) {
+    html, body { font-size: 15.5px; }
+}
+@media screen and (min-width: 720px) {
+    html, body { font-size: 27px; }
+}
+@media screen and (min-width: 1024px) {
+    html, body { font-size: 38.4px; }
+}
+@media screen and (min-width: 1080px) {
+    html, body { font-size: 40.5px; }
+}
+@media screen and (min-width: 1366px) {
+    html, body { font-size: 51px; }
+}
+@media screen and (min-width: 1440px) {
+    html, body { font-size: 54px; }
+}
+@media screen and (min-width: 1600px) {
+    html, body { font-size: 60px; }
+}
+@media screen and (min-width: 1920px) {
+    html, body { font-size: 72px; }
+}
+</style>
